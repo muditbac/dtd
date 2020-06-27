@@ -20,13 +20,44 @@ Python package to patch all the internal functions to ignore .DS_Store file in M
 
 
 * Free software: MIT license
-* Documentation: https://dtd.readthedocs.io.
+* Documentation: Usage mentioned below
 
 
 Features
 --------
 
-* TODO
+* Patches pathlib internal functions to ignore .DS_Store file
+
+
+Examples
+--------
+Before
+
+.. code-block:: python
+
+    >>> import pathlib
+    >>> list(pathlib.Path('./tests').iterdir())
+    [PosixPath('tests/.DS_Store'), PosixPath('tests/__init__.py'), PosixPath('tests/__pycache__'), PosixPath('tests/test_dtd.py'), PosixPath('tests/test_pathlib.py')]
+
+After
+
+.. code-block:: python
+
+    >>> import pathlib
+    >>> import dtd
+    >>> dtd.patch_all()
+    >>> list(pathlib.Path('./tests').iterdir())
+    [PosixPath('tests/__init__.py'), PosixPath('tests/__pycache__'), PosixPath('tests/test_dtd.py'), PosixPath('tests/test_pathlib.py')]
+
+Quick usage by just importing autopatch
+
+.. code-block:: python
+
+    >>> import pathlib
+    >>> from dtd import autopatch
+    >>> list(pathlib.Path('./tests').iterdir())
+    [PosixPath('tests/__init__.py'), PosixPath('tests/__pycache__'), PosixPath('tests/test_dtd.py'), PosixPath('tests/test_pathlib.py')]
+
 
 Credits
 -------
