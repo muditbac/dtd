@@ -6,9 +6,6 @@ Death to DS_Store
 .. image:: https://img.shields.io/pypi/v/dtd.svg
         :target: https://pypi.python.org/pypi/dtd
 
-.. image:: https://img.shields.io/travis/muditbac/dtd.svg
-        :target: https://travis-ci.com/muditbac/dtd
-
 .. image:: https://readthedocs.org/projects/dtd/badge/?version=latest
         :target: https://dtd.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
@@ -28,6 +25,12 @@ Features
 
 * Patches pathlib internal functions to ignore .DS_Store file
 
+Install
+-------
+
+.. code-block:: bash
+
+    pip install dtd
 
 Examples
 --------
